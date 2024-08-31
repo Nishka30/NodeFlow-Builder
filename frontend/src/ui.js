@@ -1,7 +1,3 @@
-// ui.js
-// Displays the drag-and-drop UI
-// --------------------------------------------------
-
 // frontend\src\ui.js
 
 import { useState, useRef, useCallback } from "react";
@@ -104,7 +100,18 @@ export const PipelineUI = () => {
 
   return (
     <>
-      <div ref={reactFlowWrapper} style={{ width: "100wv", height: "70vh" }}>
+      <div
+        ref={reactFlowWrapper}
+        style={{
+          position: 'relative',
+          height: '70vh',
+          width: '100vw',
+          display: 'flex',
+          justifyContent: 'center',
+          alignItems: 'center',
+          flexDirection: 'column',
+        }}
+      >
         <ReactFlow
           nodes={nodes}
           edges={edges}

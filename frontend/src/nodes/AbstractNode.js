@@ -1,10 +1,8 @@
-// frontend\src\nodes\AbstractNode.js
-
 import { useState, useEffect, useRef } from "react";
 import { Handle, Position } from "reactflow";
 import "./AbstractNode.css"; // Import the CSS file
 
-export const AbstractNode = ({ id, data, type, handles, onChange }) => {
+export const AbstractNode = ({ id, data, type, handles, onChange, onDelete }) => {
   const [name, setName] = useState(data?.name || id);
   const [nodeType, setNodeType] = useState(data?.nodeType || type);
   const [inputText, setInputText] = useState(data?.text || "");
@@ -58,6 +56,17 @@ export const AbstractNode = ({ id, data, type, handles, onChange }) => {
     return variables;
   };
 
+  // Handle node deletion with confirmation
+  const handleDelete = () => {
+    if (window.confirm("Are you sure you want to delete this node?")) {
+      console.log("handleDelete called");
+      console.log("onDelete:", onDelete);
+      console.log("id:", id);
+      
+      onDelete?.(id); // Ensure onDelete is called with the node id
+    }
+  };
+
   return (
     <div
       className="node-container"
@@ -65,7 +74,12 @@ export const AbstractNode = ({ id, data, type, handles, onChange }) => {
         type === "Text" ? { height: `calc(${textareaHeight} + 200px)` } : {}
       }
     >
-      <div className="node-header">{type}</div>
+      <div className="node-header">
+        {type}
+        <button className="delete-button" onClick={handleDelete}>
+          &#x2715;
+        </button>
+      </div>
       <div className="input-container">
         <label className="label">
           Name:
