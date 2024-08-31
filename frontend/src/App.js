@@ -1,13 +1,18 @@
-import { PipelineToolbar } from './toolbar';
-import { PipelineUI } from './ui';
-import { SubmitButton } from './submit';
+// frontend\src\App.js
+
+import { PipelineToolbar } from "./toolbar";
+import { PipelineUI } from "./ui";
+import { SubmitButton } from "./submit";
+import { ReactFlowProvider } from "reactflow";
 
 function App() {
   return (
     <div>
-      <PipelineToolbar />
-      <PipelineUI />
-      <SubmitButton />
+      <ReactFlowProvider>
+        <PipelineToolbar />
+        <PipelineUI />
+        <SubmitButton />
+      </ReactFlowProvider>
     </div>
   );
 }
