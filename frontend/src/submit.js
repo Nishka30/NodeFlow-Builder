@@ -24,7 +24,6 @@ export const SubmitButton = () => {
     console.log(result);
     console.log(res);
 
-    // Add JavaScript alert
     window.alert("Pipeline result available! Scroll down to see the result.");
   };
 

@@ -8,6 +8,7 @@ export const AbstractNode = ({ id, data, type, handles, onChange, onDelete }) =>
   const [inputText, setInputText] = useState(data?.text || "");
   const [dynamicHandles, setDynamicHandles] = useState(handles);
   const [textareaHeight, setTextareaHeight] = useState("80px");
+  const [isSelected, setIsSelected] = useState(false); // State for selection
 
   const textareaRef = useRef(null);
 
@@ -56,29 +57,22 @@ export const AbstractNode = ({ id, data, type, handles, onChange, onDelete }) =>
     return variables;
   };
 
-  // Handle node deletion with confirmation
-  const handleDelete = () => {
-    if (window.confirm("Are you sure you want to delete this node?")) {
-      console.log("handleDelete called");
-      console.log("onDelete:", onDelete);
-      console.log("id:", id);
-      
-      onDelete?.(id); // Ensure onDelete is called with the node id
-    }
+  const handleSelect = () => {
+    setIsSelected(!isSelected);
   };
+
+  // Handle node deletion with confirmation
 
   return (
     <div
-      className="node-container"
+      className={`node-container ${isSelected ? 'selected' : ''}`} // Add conditional class
       style={
         type === "Text" ? { height: `calc(${textareaHeight} + 200px)` } : {}
       }
+      onClick={handleSelect} // Toggle selection on click
     >
       <div className="node-header">
         {type}
-        <button className="delete-button" onClick={handleDelete}>
-          &#x2715;
-        </button>
       </div>
       <div className="input-container">
         <label className="label">

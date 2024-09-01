@@ -1,7 +1,7 @@
 // frontend\src\toolbar.js
 
 import { DraggableNode } from "./draggableNode";
-
+import DeleteButton from "./DeleteButton"; // Import your DeleteButton component
 export const PipelineToolbar = () => {
   return (
     <div
@@ -28,14 +28,19 @@ export const PipelineToolbar = () => {
         }}
       >
         <DraggableNode type="customInput" label="Input" />
-        <DraggableNode type="llm" label="LLM" />
-        <DraggableNode type="customOutput" label="Output" />
+        <DraggableNode type="url" label="URL" />
         <DraggableNode type="text" label="Text" />
         <DraggableNode type="number" label="Number" />
         <DraggableNode type="boolean" label="Boolean" />
         <DraggableNode type="date" label="Date" />
         <DraggableNode type="email" label="Email" />
-        <DraggableNode type="url" label="URL" />
+        <hr className="divider" />
+        <DraggableNode type="llm" label="LLM" />
+        <DraggableNode type="customOutput" label="Output" />
+       
+        
+        <hr className="divider" />
+        <DeleteButton />
       </div>
     </div>
   );

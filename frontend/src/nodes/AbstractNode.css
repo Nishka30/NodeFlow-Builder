@@ -11,12 +11,17 @@
   padding: 20px;
   background: #2f4f7f;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  transition: box-shadow 0.3s ease, transform 0.3s ease;
-  /* Added styles */
+  transition: background-color 0.2s ease, box-shadow 0.2s ease;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+}
+
+.node-container.selected {
+  background: #1e3554; /* Different background color when selected */
+  border: 2px solid #f0f0f0; /* Optional: Different border color when selected */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Optional: Stronger shadow when selected */
 }
 
 .node-container:hover {
@@ -142,7 +147,7 @@
   line-height: 24px;
   text-align: center;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.2s ease;
 }
 
 .delete-button:hover {
