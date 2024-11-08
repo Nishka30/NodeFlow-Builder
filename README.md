@@ -1,4 +1,4 @@
-# VectorShift Frontend Technical Assessment
+# NodeFlow-Builder
 
 This repository contains the completed frontend technical assessment for VectorShift, utilizing **React** for the frontend and **FastAPI** for the backend. The assessment consists of four key parts: Node Abstraction, Styling, Text Node Logic, and Backend Integration. 
 
