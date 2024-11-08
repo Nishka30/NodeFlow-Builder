@@ -60,7 +60,7 @@ Ensure you have **Node.js** and **Python** installed.
 This project demonstrates efficient component abstraction, responsive and dynamic UI design, and seamless backend integration for handling pipeline analysis. The code is modular, maintainable, and easily extensible for future node types or features.
 
 ## Contact
-For any questions or issues, please reach out to VectorShift recruiting at [recruiting@vectorshift.ai](mailto:recruiting@vectorshift.ai).
+For any questions or issues, please reach out to [shrimalinishka@gmail.com](mailto:shrimalinishka@gmail.com).
 
 ---
 
